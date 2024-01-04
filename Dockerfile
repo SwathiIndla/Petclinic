@@ -1,4 +1,6 @@
-FROM tomcat:8.5-jre8
+FROM tomcat:9-jre11
 EXPOSE 8080
-ADD target/petclinic.war petclinic.war
+
+WORKDIR /usr/local/tomcat/webapps/
+ADD target/petclinic.war .
 CMD ["catalina.sh", "run"]
